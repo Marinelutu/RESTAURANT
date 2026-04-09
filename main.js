@@ -2,6 +2,7 @@ import './style.css';
 import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { initAnimations } from './src/animations.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,5 +30,7 @@ gsap.ticker.add((time) => {
 // Disable GSAP lag smoothing to prevent conflicts
 gsap.ticker.lagSmoothing(0);
 
-// Set up for animations and scene
-console.log('App Initialized: Lenis and GSAP connected.');
+// Initialize GSAP ScrollTrigger animations
+initAnimations();
+
+console.log('App Initialized: Lenis, GSAP, and animations connected.');

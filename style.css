@@ -80,6 +80,24 @@ section {
   justify-content: center;
 }
 
+/* Horizontal Track — Labyrinth Layout */
+.horizontal-track {
+  overflow: hidden;
+  width: 100%;
+}
+
+.horizontal-panels {
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+}
+
+.panel {
+  width: 100vw;
+  min-width: 100vw;
+  flex-shrink: 0;
+}
+
 /* Hero */
 .hero {
   align-items: center;
@@ -214,6 +232,7 @@ section {
 .gallery {
   overflow: hidden;
   padding: 6rem 0;
+  position: relative;
 }
 
 .gallery-strip {
@@ -221,10 +240,11 @@ section {
   gap: 2rem;
   width: max-content;
   padding: 0 4rem;
+  will-change: transform;
 }
 
 .gallery-img {
-  width: 400px;
+  width: 500px;
   height: 500px;
   object-fit: cover;
   border-radius: 4px;
