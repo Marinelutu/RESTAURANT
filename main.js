@@ -3,6 +3,7 @@ import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initAnimations } from './src/animations.js';
+import { initScene } from './src/scene.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,4 +34,8 @@ gsap.ticker.lagSmoothing(0);
 // Initialize GSAP ScrollTrigger animations
 initAnimations();
 
-console.log('App Initialized: Lenis, GSAP, and animations connected.');
+// Initialize the Three.js 3D scene
+initScene();
+
+console.log('App Initialized: Lenis, GSAP, Three.js, and animations connected.');
+

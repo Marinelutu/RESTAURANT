@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { setScrollProgress } from './scene.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,6 +70,10 @@ function horizontalTrack() {
       pin: true,
       scrub: 1,
       invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        // Feed normalized scroll progress (0→1) to the 3D scene
+        setScrollProgress(self.progress);
+      },
     },
   });
 

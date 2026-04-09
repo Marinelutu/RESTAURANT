@@ -158,6 +158,36 @@ section {
   position: relative;
 }
 
+.canvas-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.canvas-fallback {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  opacity: 0.9;
+}
+
+/* Mobile — hide 3D, compress layout */
+@media (max-width: 767px) {
+  .canvas-container {
+    height: 300px;
+  }
+
+  .dish {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dish-content {
+    max-width: 100%;
+  }
+}
+
 /* Menu */
 .menu h2 {
   font-size: 3rem;
