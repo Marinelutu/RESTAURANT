@@ -258,26 +258,119 @@ section {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Gallery */
-.gallery {
+/* ==========================================================================
+   TRACK 2 (Gallery + Wine Text + Wine 3D)
+   ========================================================================== */
+#track-gallery-wine {
+  height: 100vh;
+  width: 100%;
   overflow: hidden;
-  padding: 6rem 0;
   position: relative;
+  background-color: var(--color-bg);
 }
 
-.gallery-strip {
+.track-2-panels {
+  display: flex;
+  height: 100%;
+  width: max-content;
+}
+
+/* Gallery inside track 2 */
+.gallery.panel {
+  padding: 0 4vw;
+  display: flex;
+  align-items: center;
+  /* Override default panel 100vw to allow content to dictate width if needed, or keep it wide */
+  width: auto;
+}
+
+.gallery-images {
   display: flex;
   gap: 2rem;
-  width: max-content;
-  padding: 0 4rem;
-  will-change: transform;
 }
 
 .gallery-img {
-  width: 500px;
-  height: 500px;
+  width: min(500px, 80vw);
+  height: clamp(300px, 60vh, 500px);
   object-fit: cover;
   border-radius: 4px;
+}
+
+/* Wine Text Panel */
+.wine-text-panel {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.wine-text-content {
+  text-align: center;
+  z-index: 3;
+}
+
+.wine-text-content h2 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.wine-tagline {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Wine Canvas Panel */
+.wine-canvas-panel {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.wine-canvas-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.wine-canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+.wine-canvas-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  #track-gallery-wine {
+    height: auto;
+    overflow: visible;
+  }
+  .track-2-panels {
+    flex-direction: column;
+    width: 100%;
+  }
+  .gallery.panel {
+    width: 100%;
+    padding: 2rem;
+    overflow-x: auto;
+  }
+  .wine-text-panel {
+    height: auto;
+    padding: 4rem 2rem;
+  }
+  .wine-canvas-panel {
+    display: none;
+  }
 }
 
 /* CTA */

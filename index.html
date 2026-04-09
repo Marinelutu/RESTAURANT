@@ -17,6 +17,7 @@
         <a href="#dish">Cuts</a>
         <a href="#menu">Menu</a>
         <a href="#about">About</a>
+        <a href="#wine">Wine</a>
         <a href="#cta">Reserve</a>
       </div>
     </nav>
@@ -86,14 +87,33 @@
         </div>
       </section>
 
-      <section id="gallery" class="gallery">
-        <div class="gallery-strip">
-          <img src="/assets/images/interior.png" class="gallery-img" alt="Gallery">
-          <img src="/assets/images/tomahawk.png" class="gallery-img" alt="Gallery">
-          <img src="/assets/images/filet.png" class="gallery-img" alt="Gallery">
-          <img src="/assets/images/flank.png" class="gallery-img" alt="Gallery">
+      <div class="horizontal-track track-2" id="track-gallery-wine">
+        <div class="horizontal-panels track-2-panels">
+          <section id="gallery" class="gallery panel">
+            <div class="gallery-images">
+              <img src="/assets/images/interior.png" class="gallery-img" alt="Gallery">
+              <img src="/assets/images/tomahawk.png" class="gallery-img" alt="Gallery">
+              <img src="/assets/images/filet.png" class="gallery-img" alt="Gallery">
+              <img src="/assets/images/flank.png" class="gallery-img" alt="Gallery">
+            </div>
+          </section>
+
+          <section id="wine-text" class="wine-text-panel panel">
+            <div class="wine-text-content">
+              <h2>The Perfect Pour</h2>
+              <p class="wine-tagline">A curated cellar to complement every cut.</p>
+            </div>
+          </section>
+
+          <section id="wine" class="wine-canvas-panel panel">
+            <div class="wine-canvas-wrapper">
+              <div class="wine-canvas-container" id="wine-canvas-container">
+                <!-- 3D wine scene injected here -->
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
 
       <section id="cta" class="cta">
         <div class="cta-container">

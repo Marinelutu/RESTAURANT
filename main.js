@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initAnimations } from './src/animations.js';
 import { initScene } from './src/scene.js';
+import { initWineScene } from './src/wineScene.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,8 +35,9 @@ gsap.ticker.lagSmoothing(0);
 // Initialize GSAP ScrollTrigger animations
 initAnimations();
 
-// Initialize the Three.js 3D scene
+// Initialize the Three.js 3D scenes
 initScene();
+initWineScene();
 
 console.log('App Initialized: Lenis, GSAP, Three.js, and animations connected.');
 

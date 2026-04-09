@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { setScrollProgress } from './scene.js';
+import { setWineScrollProgress } from './wineScene.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,7 +19,7 @@ export function initAnimations() {
   heroEntrance();
   horizontalTrack();
   aboutReveal();
-  galleryHorizontal();
+  trackGalleryWine();
   ctaReveal();
 }
 
@@ -156,24 +157,50 @@ function aboutReveal() {
 }
 
 /* ────────────────────────────────────────────
-   5 →  GALLERY — horizontal pin & scrub
+   5 ↓  TRACK 2 — Gallery → Wine Text → Wine 3D
 ──────────────────────────────────────────── */
-function galleryHorizontal() {
-  const gallery = document.querySelector('.gallery');
-  const strip = document.querySelector('.gallery-strip');
-  if (!gallery || !strip) return;
+function trackGalleryWine() {
+  const track = document.getElementById('track-gallery-wine');
+  if (!track) return;
+  const panels = track.querySelector('.track-2-panels');
 
-  gsap.to(strip, {
-    x: () => -(strip.scrollWidth - window.innerWidth),
-    ease: 'none',
+  const getScrollAmount = () => -(panels.scrollWidth - window.innerWidth);
+
+  // We build a timeline with two steps: 
+  // 1. Slide panels horizontally.
+  // 2. Pause horizontally and use the remaining scrub progress to pour the wine.
+  const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: gallery,
+      trigger: track,
       start: 'top top',
-      end: () => `+=${strip.scrollWidth - window.innerWidth}`,
+      // Added +200% viewport height to give the pour animation long scrub duration
+      end: () => `+=${panels.scrollWidth + window.innerWidth * 2}`,
       pin: true,
       scrub: 1,
       invalidateOnRefresh: true,
-    },
+      onUpdate: () => {
+        const p = tl.progress();
+        // Since step 1 duration is 1, and step 2 duration is 0.8:
+        // The horizontal transition finishes at 1 / 1.8 = ~0.555 progress
+        const ratio = 1 / 1.8;
+        
+        if (p <= ratio) {
+          setWineScrollProgress(0);
+        } else {
+          setWineScrollProgress((p - ratio) / (1 - ratio));
+        }
+      }
+    }
+  });
+
+  tl.to(panels, {
+    x: getScrollAmount,
+    ease: 'none',
+    duration: 1
+  });
+
+  tl.to({}, { 
+    duration: 0.8
   });
 }
 
