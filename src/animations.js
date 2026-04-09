@@ -15,6 +15,10 @@ gsap.registerPlugin(ScrollTrigger);
  *   6. ↓  CTA          (step IN  — vertical fade-up)
  */
 
+function isMobile() {
+  return window.innerWidth < 768;
+}
+
 export function initAnimations() {
   heroEntrance();
   horizontalTrack();
@@ -59,6 +63,13 @@ function horizontalTrack() {
   if (!track) return;
   const panels = track.querySelector('.horizontal-panels');
   if (!panels) return;
+
+  // On mobile, skip horizontal pinning — panels stack vertically via CSS
+  if (isMobile()) {
+    // Just reveal all content immediately (no hidden state)
+    gsap.set(['.dish h2', '.dish-content p', '.menu h2', '.menu-card'], { opacity: 1, y: 0 });
+    return;
+  }
 
   // ---------- Main horizontal tween (3 panels) ----------
   const scrollTween = gsap.to(panels, {
@@ -163,6 +174,9 @@ function trackGalleryWine() {
   const track = document.getElementById('track-gallery-wine');
   if (!track) return;
   const panels = track.querySelector('.track-2-panels');
+
+  // On mobile, skip horizontal pinning — panels stack vertically via CSS
+  if (isMobile()) return;
 
   const getScrollAmount = () => -(panels.scrollWidth - window.innerWidth);
 

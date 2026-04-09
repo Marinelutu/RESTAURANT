@@ -4,20 +4,37 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="IGNIS — A premium steakhouse experience. Dry-aged Wagyu, fire-forged perfection, and an expertly curated wine cellar. Reserve your table today." />
+    <meta name="theme-color" content="#0A0A0A" />
     <title>IGNIS | Prime cuts, fire-forged</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   </head>
   <body>
-    <nav class="navigation">
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-brand">IGNIS</div>
+        <div class="preloader-bar">
+          <div class="preloader-bar-fill" id="preloader-bar-fill"></div>
+        </div>
+        <div class="preloader-tagline">Prime cuts, fire-forged</div>
+      </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+    <nav class="navigation" id="navigation">
       <div class="nav-brand">IGNIS</div>
-      <div class="nav-links">
-        <a href="#hero">Home</a>
-        <a href="#dish">Cuts</a>
-        <a href="#menu">Menu</a>
-        <a href="#about">About</a>
-        <a href="#wine">Wine</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
         <a href="#cta">Reserve</a>
       </div>
     </nav>
@@ -126,6 +143,44 @@
           </form>
         </div>
       </section>
+
+      <!-- Footer -->
+      <footer class="site-footer" id="footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <div class="footer-logo">IGNIS</div>
+            <p class="footer-tagline">Prime cuts, fire-forged, and dramatically served.</p>
+          </div>
+          <div class="footer-columns">
+            <div class="footer-col">
+              <h4>Visit Us</h4>
+              <p>123 Ember Lane</p>
+              <p>New York, NY 10012</p>
+              <p>Open Tue – Sun, 5pm – 11pm</p>
+            </div>
+            <div class="footer-col">
+              <h4>Contact</h4>
+              <p>reservations@ignis.com</p>
+              <p>+1 (212) 555-0187</p>
+            </div>
+            <div class="footer-col">
+              <h4>Follow</h4>
+              <div class="footer-socials">
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="Twitter">Twitter</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2026 IGNIS Steakhouse. All rights reserved.</p>
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
 
     <script type="module" src="/main.js"></script>

@@ -4,55 +4,100 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="IGNIS — A premium steakhouse experience. Dry-aged Wagyu, fire-forged perfection, and an expertly curated wine cellar. Reserve your table today." />
+    <meta name="theme-color" content="#0A0A0A" />
     <title>IGNIS | Prime cuts, fire-forged</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-DZjgin-f.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CogBlk3P.css">
+    <script type="module" crossorigin src="/assets/index-BRZdWvYd.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CXO-jHqp.css">
   </head>
   <body>
-    <nav class="navigation">
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-brand">IGNIS</div>
+        <div class="preloader-bar">
+          <div class="preloader-bar-fill" id="preloader-bar-fill"></div>
+        </div>
+        <div class="preloader-tagline">Prime cuts, fire-forged</div>
+      </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+    <nav class="navigation" id="navigation">
       <div class="nav-brand">IGNIS</div>
-      <div class="nav-links">
-        <a href="#hero">Home</a>
-        <a href="#dish">Cuts</a>
-        <a href="#menu">Menu</a>
-        <a href="#about">About</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
         <a href="#cta">Reserve</a>
       </div>
     </nav>
 
     <main>
-      <section id="hero" class="hero">
-        <div class="hero-content">
-          <h1>IGNIS</h1>
-          <p class="tagline">Prime cuts, fire-forged, and dramatically served.</p>
-          <button class="cta-button">Reserve a Table</button>
-        </div>
-      </section>
+      <div class="horizontal-track" id="track-dishes">
+        <div class="horizontal-panels">
+          <section id="hero" class="hero panel">
+            <div class="hero-content">
+              <h1>IGNIS</h1>
+              <p class="tagline">Prime cuts, fire-forged, and dramatically served.</p>
+              <button class="cta-button">Reserve a Table</button>
+            </div>
+          </section>
 
-      <section id="dish" class="dish">
-        <div class="dish-content">
-          <h2>The Art of the Cut</h2>
-          <p>Experience the perfect harmony of dry-aged perfection and elemental fire.</p>
-        </div>
-        <div class="canvas-container" id="canvas-container">
-          <!-- 3D model will be injected here -->
-        </div>
-      </section>
+          <section id="dish" class="dish panel">
+            <div class="dish-content">
+              <h2>The Art of the Cut</h2>
+              <p>Experience the perfect harmony of dry-aged perfection and elemental fire.</p>
+            </div>
+            <div class="canvas-container" id="canvas-container">
+              <!-- 3D model will be injected here -->
+            </div>
+          </section>
 
-      <section id="menu" class="menu">
-        <h2>Our Select Cuts</h2>
-        <div class="menu-grid">
-          <!-- Menu cards will go here -->
+          <section id="menu" class="menu panel">
+            <h2>Our Select Cuts</h2>
+            <div class="menu-grid">
+              <div class="menu-card">
+                <img src="/assets/images/tomahawk.png" alt="The Tomahawk Reserve">
+                <div class="menu-card-content">
+                  <h3>The Tomahawk Reserve</h3>
+                  <p>32oz dry-aged Wagyu ribeye, smoked volcanic salt, bone-marrow demi-glace.</p>
+                  <span class="price">$165</span>
+                </div>
+              </div>
+              <div class="menu-card">
+                <img src="/assets/images/filet.png" alt="Filet Mignon au Poivre">
+                <div class="menu-card-content">
+                  <h3>Filet Mignon au Poivre</h3>
+                  <p>8oz center-cut filet, Madagascar peppercorn crust, cognac cream reduction.</p>
+                  <span class="price">$68</span>
+                </div>
+              </div>
+              <div class="menu-card">
+                <img src="/assets/images/flank.png" alt="Charred Wagyu Flank">
+                <div class="menu-card-content">
+                  <h3>Charred Wagyu Flank</h3>
+                  <p>10oz wood-fired flank steak, chimichurri rojo, blistered shishito peppers.</p>
+                  <span class="price">$45</span>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
 
       <section id="about" class="about">
         <div class="about-grid">
           <div class="about-image">
-            <!-- Image goes here -->
+            <img src="/assets/images/interior.png" alt="IGNIS Interior">
           </div>
           <div class="about-text">
             <h2>Forged in Fire</h2>
@@ -61,11 +106,33 @@
         </div>
       </section>
 
-      <section id="gallery" class="gallery">
-        <div class="gallery-strip">
-          <!-- Gallery images will go here -->
+      <div class="horizontal-track track-2" id="track-gallery-wine">
+        <div class="horizontal-panels track-2-panels">
+          <section id="gallery" class="gallery panel">
+            <div class="gallery-images">
+              <img src="/assets/images/interior.png" class="gallery-img" alt="Gallery">
+              <img src="/assets/images/tomahawk.png" class="gallery-img" alt="Gallery">
+              <img src="/assets/images/filet.png" class="gallery-img" alt="Gallery">
+              <img src="/assets/images/flank.png" class="gallery-img" alt="Gallery">
+            </div>
+          </section>
+
+          <section id="wine-text" class="wine-text-panel panel">
+            <div class="wine-text-content">
+              <h2>The Perfect Pour</h2>
+              <p class="wine-tagline">A curated cellar to complement every cut.</p>
+            </div>
+          </section>
+
+          <section id="wine" class="wine-canvas-panel panel">
+            <div class="wine-canvas-wrapper">
+              <div class="wine-canvas-container" id="wine-canvas-container">
+                <!-- 3D wine scene injected here -->
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
 
       <section id="cta" class="cta">
         <div class="cta-container">
@@ -78,6 +145,44 @@
           </form>
         </div>
       </section>
+
+      <!-- Footer -->
+      <footer class="site-footer" id="footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <div class="footer-logo">IGNIS</div>
+            <p class="footer-tagline">Prime cuts, fire-forged, and dramatically served.</p>
+          </div>
+          <div class="footer-columns">
+            <div class="footer-col">
+              <h4>Visit Us</h4>
+              <p>123 Ember Lane</p>
+              <p>New York, NY 10012</p>
+              <p>Open Tue – Sun, 5pm – 11pm</p>
+            </div>
+            <div class="footer-col">
+              <h4>Contact</h4>
+              <p>reservations@ignis.com</p>
+              <p>+1 (212) 555-0187</p>
+            </div>
+            <div class="footer-col">
+              <h4>Follow</h4>
+              <div class="footer-socials">
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="Twitter">Twitter</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2026 IGNIS Steakhouse. All rights reserved.</p>
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
 
   </body>
